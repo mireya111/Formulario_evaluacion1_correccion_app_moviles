@@ -1,0 +1,77 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Formulario de Registro
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div style="display: flex; justify-content: center; align-items: center; height: 70vh; color: rgb(0, 0, 0);">
+    <form (ngSubmit)="sendCamposFormulario()" style="width: 100%; max-width: 400px; background: #c8deed; padding: 15px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); ">
+      <ion-list>
+        <!-- Nombre -->
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input [(ngModel)]="formularioDatos.nombre" name="nombre" required></ion-input>
+        </ion-item>
+
+        <!-- Apellido -->
+        <ion-item>
+          <ion-label position="floating">Apellido</ion-label>
+          <ion-input [(ngModel)]="formularioDatos.apellido" name="apellido" required></ion-input>
+        </ion-item>
+
+        <!-- Edad -->
+        <ion-item>
+          <ion-label position="floating">Edad</ion-label>
+          <ion-input type="number" [(ngModel)]="formularioDatos.edad" name="edad" required></ion-input>
+        </ion-item>
+
+        <!-- Email -->
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" [(ngModel)]="formularioDatos.email" name="email" required></ion-input>
+        </ion-item>
+
+        <!-- Teléfono -->
+        <ion-item>
+          <ion-label position="floating">Teléfono</ion-label>
+          <ion-input type="tel" [(ngModel)]="formularioDatos.telefono" name="telefono" required></ion-input>
+        </ion-item>
+
+        <!-- Ciudad -->
+        <ion-item>
+          <ion-label position="floating">Ciudad</ion-label>
+          <ion-input [(ngModel)]="formularioDatos.ciudad" name="ciudad" required></ion-input>
+        </ion-item>
+
+        <!-- Fecha de Nacimiento -->
+        <ion-item>
+          <ion-label position="floating">Fecha de Nacimiento</ion-label>
+          <ion-input type="date" [(ngModel)]="formularioDatos.fechaNaciminto" name="fechaNaciminto" required></ion-input>
+        </ion-item>
+
+        <!-- Selección múltiple para Género -->
+        <ion-item>
+          <ion-label position="stacked">Género</ion-label>
+          <ion-select 
+            [(ngModel)]="formularioDatos.genero" 
+            name="genero" 
+            placeholder="Selecciona uno" 
+            interface="popover"
+            required>
+            <ion-select-option value="Masculino">Masculino</ion-select-option>
+            <ion-select-option value="Femenino">Femenino</ion-select-option>
+            <ion-select-option value="Prefiero no decirlo">Prefiero no decirlo</ion-select-option>
+          </ion-select>
+        </ion-item>
+        
+        <!-- Botón de Enviar -->
+        <ion-button expand="full" type="submit">
+          Enviar
+        </ion-button>
+      </ion-list>
+    </form>
+  </div>
+</ion-content>
